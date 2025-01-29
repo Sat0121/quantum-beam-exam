@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="散乱波の重ね合わせに関する詳細解説">
+    <title>問題3: 詳細解説 - 結晶のサイズ効果</title>
+    <link rel="stylesheet" href="../../assets/css/styles.css">
+</head>
+<body>
+    <nav class="nav">
+        <ul>
+            <li><a href="../../index.html">ホーム</a></li>
+            <li><a href="index.html">問題3: サイズ効果</a></li>
+            <li><a href="../problem2/">問題2: BCC構造</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <h1>散乱波の重ね合わせに関する詳細解説</h1>
+
+        <section class="basic-equations">
+            <h2>1. 基本式の導出</h2>
+            <div class="equation-block">
+                <h3>散乱波の一般式</h3>
+                <div class="formula">
+                    F = Σ fn exp(2πiΔn/λ)
+                </div>
+                <p>パラメータの説明：</p>
+                <ul>
+                    <li>fn: 原子散乱因子（本問では全て f = 1 として扱う）</li>
+                    <li>Δn: 行路差</li>
+                    <li>λ: 入射X線の波長（= 1.4Å）</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="z-axis-calculation">
+            <h2>2. Z軸方向の散乱（F14Z）の詳細計算</h2>
+            
+            <div class="step">
+                <h3>Step 1: Z座標のグループ化</h3>
+                <p>Z座標値によって原子をグループ化します：</p>
+                <table>
+                    <tr>
+                        <th>Z座標</th>
+                        <th>原子番号</th>
+                        <th>原子数</th>
+                    </tr>
+                    <tr>
+                        <td>0</td>
+                        <td>r0</td>
+                        <td>1個</td>
+                    </tr>
+                    <tr>
+                        <td>1.4Å</td>
+                        <td>r4, r9</td>
+                        <td>2個</td>
+                    </tr>
+                    <tr>
+                        <td>2.8Å</td>
+                        <td>r5, r6, r7, r8</td>
+                        <td>4個</td>
+                    </tr>
+                    <tr>
+                        <td>5.6Å</td>
+                        <td>r10, r11, r12, r13</td>
+                        <td>4個</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="step">
+                <h3>Step 2: 位相因子の計算</h3>
+                <div class="formula">
+                    exp(2πiz/λ) の計算：<br>
+                    z = 0: exp(0) = 1<br>
+                    z = 1.4Å: exp(2πi·1.4/1.4) = exp(2πi) = 1<br>
+                    z = 2.8Å: exp(2πi·2.8/1.4) = exp(4πi) = 1<br>
+                    z = 5.6Å: exp(2πi·5.6/1.4) = exp(8πi) = 1
+                </div>
+            </div>
+
+            <div class="step">
+                <h3>Step 3: 最終式の導出</h3>
+                <div class="formula">
+                    F14Z = f[1 + 2exp(2πi) + 4exp(4πi) + 4exp(8πi)]<br>
+                    = f[1 + 2 + 4 + 4]<br>
+                    = 11f
+                </div>
+            </div>
+        </section>
+
+        <section class="x-axis-calculation">
+            <h2>3. X軸方向の散乱（F14X）の詳細計算</h2>
+            
+            <div class="step">
+                <h3>Step 1: X座標のグループ化</h3>
+                <table>
+                    <tr>
+                        <th>X座標</th>
+                        <th>原子番号</th>
+                        <th>原子数</th>
+                    </tr>
+                    <tr>
+                        <td>0</td>
+                        <td>r0, r2, r5, r7, r10, r12</td>
+                        <td>6個</td>
+                    </tr>
+                    <tr>
+                        <td>1.4Å</td>
+                        <td>r4, r9</td>
+                        <td>2個</td>
+                    </tr>
+                    <tr>
+                        <td>2.8Å</td>
+                        <td>r1, r3, r6, r8, r11, r13</td>
+                        <td>6個</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="step">
+                <h3>Step 2: 位相因子の計算</h3>
+                <div class="formula">
+                    exp(2πix/λ) の計算：<br>
+                    x = 0: exp(0) = 1<br>
+                    x = 1.4Å: exp(2πi·1.4/1.4) = exp(2πi) = 1<br>
+                    x = 2.8Å: exp(2πi·2.8/1.4) = exp(4πi) = 1
+                </div>
+            </div>
+
+            <div class="step">
+                <h3>Step 3: 最終式の導出</h3>
+                <div class="formula">
+                    F14X = f[6 + 2exp(2πi) + 6exp(4πi)]<br>
+                    = f[6 + 2 + 6]<br>
+                    = 14f
+                </div>
+            </div>
+        </section>
+
+        <section class="angular-dependence">
+            <h2>4. 散乱強度の角度依存性</h2>
+            
+            <div class="equation-block">
+                <h3>Debye式の適用</h3>
+                <div class="formula">
+                    I(q) = Σ Σ fn fm exp(iq·rnm)
+                </div>
+                <p>ここで：</p>
+                <ul>
+                    <li>q: 散乱ベクトル（= 4π sinθ/λ）</li>
+                    <li>rnm: 原子間ベクトル</li>
+                </ul>
+            </div>
+
+            <div class="step">
+                <h3>小角散乱領域での近似</h3>
+                <div class="formula">
+                    I(q) ≈ N²[1 - (q²Rg²)/3]<br>
+                    ここで、Rg: 慣性半径
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 量子ビーム工学 試験解説サイト</p>
+    </footer>
+</body>
+</html>

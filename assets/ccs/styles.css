@@ -1,0 +1,119 @@
+/* Card Layout */
+.link-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin: 1.5rem 0;
+}
+
+.card {
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Responsive Navigation */
+@media (max-width: 768px) {
+    .nav ul {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .nav a {
+        display: block;
+        padding: 0.75rem 1rem;
+    }
+
+    body {
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 1.75rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+}
+
+/* Improved Typography */
+@media (min-width: 768px) {
+    body {
+        font-size: 16px;
+        line-height: 1.7;
+    }
+
+    .formula {
+        font-size: 1.1em;
+    }
+}
+
+/* Print Styles */
+@media print {
+    .nav {
+        display: none;
+    }
+
+    body {
+        padding: 0;
+        margin: 0;
+    }
+
+    .card {
+        box-shadow: none;
+        border: 1px solid #ddd;
+    }
+}
+
+/* Accessibility Improvements */
+:focus {
+    outline: 3px solid #4299e1;
+    outline-offset: 2px;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #1a202c;
+        color: #e2e8f0;
+    }
+
+    .card {
+        background-color: #2d3748;
+    }
+
+    .formula {
+        background-color: #2d3748;
+    }
+
+    .nav {
+        background-color: #2d3748;
+    }
+
+    .nav a {
+        color: #63b3ed;
+    }
+
+    .nav a:hover {
+        background-color: #4a5568;
+    }
+}

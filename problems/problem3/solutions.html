@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="結晶のサイズ効果に関する問題の解答と解説">
+    <title>問題3: 解答と解説 - 結晶のサイズ効果</title>
+    <link rel="stylesheet" href="../../assets/css/styles.css">
+</head>
+<body>
+    <nav class="nav">
+        <ul>
+            <li><a href="../../index.html">ホーム</a></li>
+            <li><a href="index.html">問題3: サイズ効果</a></li>
+            <li><a href="../problem2/">問題2: BCC構造</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <h1>問題3：結晶のサイズ効果に関する解析</h1>
+
+        <section class="solution-part">
+            <h2>問3-1：z軸方向の散乱波の重ね合わせ</h2>
+            
+            <div class="question">
+                <p>散乱ベクトルをz軸方向に取ったときの散乱波の重ね合わせF14Zを求める。</p>
+            </div>
+
+            <div class="solution">
+                <p>z軸方向の散乱を考えると、各原子のz座標による位相差を考慮します：</p>
+                <div class="formula">
+                    F14Z = Σf exp(2πiz/λ)<br>
+                    = f[1 + 2exp(2πi·1.4/1.4) + 4exp(2πi·2.8/1.4) + 4exp(2πi·5.6/1.4)]<br>
+                    = f[1 + 2 + 4 + 4]<br>
+                    = 11f
+                </div>
+            </div>
+
+            <div class="explanation">
+                <p>計算の手順：</p>
+                <ol>
+                    <li>z = 0の位置：1個の原子からの寄与</li>
+                    <li>z = 1.4Åの位置：2個の原子からの寄与</li>
+                    <li>z = 2.8Åの位置：4個の原子からの寄与</li>
+                    <li>z = 5.6Åの位置：4個の原子からの寄与</li>
+                </ol>
+                <p>これらの寄与を合計すると、全体として11fという結果が得られます。</p>
+            </div>
+        </section>
+
+        <section class="solution-part">
+            <h2>問3-2：x軸方向の散乱波の重ね合わせ</h2>
+            
+            <div class="question">
+                <p>散乱ベクトルをx軸方向に取ったときのF14Xを求める。</p>
+            </div>
+
+            <div class="solution">
+                <div class="formula">
+                    F14X = Σf exp(2πix/λ)<br>
+                    = f[6 + 2exp(2πi·1.4/1.4) + 6exp(2πi·2.8/1.4)]<br>
+                    = f[6 + 2 + 6]<br>
+                    = 14f
+                </div>
+            </div>
+
+            <div class="explanation">
+                <p>x座標位置での原子の分布：</p>
+                <ul>
+                    <li>x = 0の位置：6個の原子（r0, r2, r5, r7, r10, r12）</li>
+                    <li>x = 1.4Åの位置：2個の原子（r4, r9）</li>
+                    <li>x = 2.8Åの位置：6個の原子（r1, r3, r6, r8, r11, r13）</li>
+                </ul>
+                <p>各位置での位相因子を考慮すると、全体として14fという結果になります。</p>
+            </div>
+        </section>
+
+        <section class="solution-part">
+            <h2>問3-3：異なる散乱角での強度比較</h2>
+            
+            <div class="question">
+                <p>2θ = 50°, 55°, 60°, 65°, 70°における散乱強度を比較し、サイズとピーク幅の関係を説明する。</p>
+            </div>
+
+            <div class="solution">
+                <h3>散乱強度の角度依存性</h3>
+                <div class="formula">
+                    I(θ) = |F(θ)|²
+                </div>
+                
+                <h3>Scherrerの式による解析</h3>
+                <div class="formula">
+                    Δ(2θ) ≈ λ/(D cosθ)
+                </div>
+                
+                <div class="explanation">
+                    <p>サイズ効果の特徴：</p>
+                    <ul>
+                        <li>結晶サイズの有限性によるピークのブロード化</li>
+                        <li>異なる方向（z方向とx方向）での異なるピーク幅</li>
+                        <li>高角側でのピーク分離の向上</li>
+                        <li>粒子サイズとピーク幅の逆比例関係</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="solution-part">
+            <h2>問3-4：小角散乱領域の解析</h2>
+            
+            <div class="question">
+                <p>2θ = 0°, 5°, 9°での強度を比較し、サイズ効果について説明する。</p>
+            </div>
+
+            <div class="solution">
+                <h3>小角散乱での特徴</h3>
+                <div class="formula">
+                    I(q) ≈ I(0)exp(-Rg²q²/3)
+                </div>
+                
+                <div class="explanation">
+                    <h3>散乱強度の角度依存性</h3>
+                    <ul>
+                        <li>2θ = 0°付近：
+                            <ul>
+                                <li>粒子全体の形状を反映</li>
+                                <li>最大強度を示す</li>
+                            </ul>
+                        </li>
+                        <li>角度の増加に伴う強度減衰：
+                            <ul>
+                                <li>Guinierの法則に従う減衰</li>
+                                <li>慣性半径Rgに依存</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="note">
+                    <h3>広角散乱との比較</h3>
+                    <p>散乱情報の違い：</p>
+                    <ul>
+                        <li>小角散乱：粒子の全体サイズと形状に関する情報</li>
+                        <li>広角散乱：結晶構造と結晶子サイズに関する情報</li>
+                        <li>両者の相補的な情報を組み合わせることで、より完全な構造解析が可能</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 量子ビーム工学 試験解説サイト</p>
+    </footer>
+</body>
+</html>

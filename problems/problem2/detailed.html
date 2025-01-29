@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="BCC構造のピーク位置と強度表示に関する詳細解説">
+    <title>問題2: 詳細解説 - BCC構造の回折</title>
+    <link rel="stylesheet" href="../../assets/css/styles.css">
+</head>
+<body>
+    <nav class="nav">
+        <ul>
+            <li><a href="../../index.html">ホーム</a></li>
+            <li><a href="index.html">問題2: BCC構造</a></li>
+            <li><a href="../problem3/">問題3: サイズ効果</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <h1>問題2-4：BCC構造のピーク位置と強度表示に関する詳細解説</h1>
+
+        <section class="calculation-steps">
+            <h2>1. ピーク位置の計算手順</h2>
+
+            <div class="step">
+                <h3>Step 1: Bragg条件の確認</h3>
+                <div class="formula">
+                    2d sinθ = nλ
+                </div>
+                <p>ここで：</p>
+                <ul>
+                    <li>d：面間隔</li>
+                    <li>θ：Bragg角</li>
+                    <li>λ：入射X線の波長（= 1Å）</li>
+                </ul>
+            </div>
+
+            <div class="step">
+                <h3>Step 2: 面間隔の計算</h3>
+                <div class="formula">
+                    d = a/√(h² + k² + l²)
+                </div>
+                <p>ここで：</p>
+                <ul>
+                    <li>a：格子定数（= 3.8Å）</li>
+                    <li>(h,k,l)：ミラー指数</li>
+                </ul>
+                <div class="note">
+                    <p>BCC構造では、h+k+l = 偶数の組み合わせのみを考慮します。</p>
+                </div>
+            </div>
+
+            <div class="step">
+                <h3>Step 3: 2θの計算</h3>
+                <div class="formula">
+                    2θ = 2 arcsin(λ/2d)<br>
+                    = 2 arcsin(λ√(h² + k² + l²)/2a)
+                </div>
+            </div>
+        </section>
+
+        <section class="calculation-example">
+            <h2>2. 具体的な計算例</h2>
+            
+            <table>
+                <thead>
+                    <tr>
+                        <th>面指数(hkl)</th>
+                        <th>h²+k²+l²</th>
+                        <th>面間隔d(Å)</th>
+                        <th>2θ(°)</th>
+                        <th>相対強度</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>(110)</td>
+                        <td>2</td>
+                        <td>2.687</td>
+                        <td>32.00</td>
+                        <td>強</td>
+                    </tr>
+                    <tr>
+                        <td>(200)</td>
+                        <td>4</td>
+                        <td>1.900</td>
+                        <td>45.24</td>
+                        <td>中</td>
+                    </tr>
+                    <tr>
+                        <td>(211)</td>
+                        <td>6</td>
+                        <td>1.551</td>
+                        <td>55.73</td>
+                        <td>強</td>
+                    </tr>
+                    <tr>
+                        <td>(220)</td>
+                        <td>8</td>
+                        <td>1.344</td>
+                        <td>65.89</td>
+                        <td>中</td>
+                    </tr>
+                    <tr>
+                        <td>(310)</td>
+                        <td>10</td>
+                        <td>1.202</td>
+                        <td>74.47</td>
+                        <td>中</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="note">
+                <h3>計算例：(110)面の場合</h3>
+                <ol>
+                    <li>h²+k²+l² = 1²+1²+0² = 2</li>
+                    <li>d = 3.8/√2 = 2.687Å</li>
+                    <li>2θ = 2 arcsin(1.0/(2×2.687)) = 32.00°</li>
+                </ol>
+            </div>
+        </section>
+
+        <section class="plot-explanation">
+            <h2>3. 2θプロットを使用する理由</h2>
+
+            <div class="step">
+                <h3>実験的な観点</h3>
+                <ul>
+                    <li>検出器の走査機構：
+                        <ul>
+                            <li>多くの回折計は試料を中心として2θの角度で検出器を走査</li>
+                            <li>試料はθ回転、検出器は2θ回転する（θ-2θ配置）</li>
+                        </ul>
+                    </li>
+                    <li>データ収集の効率：
+                        <ul>
+                            <li>2θ走査により、広い角度範囲を効率的にカバー</li>
+                            <li>検出器の有効面積を最大限活用可能</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="note">
+                <h3>重要な注意点</h3>
+                <ul>
+                    <li>角度分解能は2θの増加とともに向上</li>
+                    <li>高角での測定は格子定数の精密決定に重要</li>
+                    <li>強度補正は2θの関数として扱う</li>
+                    <li>実験室系での測定では2θ表示が標準的</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 量子ビーム工学 試験解説サイト</p>
+    </footer>
+</body>
+</html>
